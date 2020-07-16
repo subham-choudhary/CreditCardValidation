@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D732A32624C101A30025587D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D732A32524C101A30025587D /* UIView+Extensions.swift */; };
 		D7D6E85924C05CFE001D7983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6E85824C05CFE001D7983 /* AppDelegate.swift */; };
 		D7D6E85B24C05CFE001D7983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6E85A24C05CFE001D7983 /* SceneDelegate.swift */; };
 		D7D6E85D24C05CFE001D7983 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6E85C24C05CFE001D7983 /* CreditCardViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D732A32524C101A30025587D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		D7D6E85524C05CFE001D7983 /* YogifyPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YogifyPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D6E85824C05CFE001D7983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7D6E85A24C05CFE001D7983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D6E87B24C0A853001D7983 /* UITextfield+Extension.swift */,
+				D732A32524C101A30025587D /* UIView+Extensions.swift */,
 				D7D6E86624C05D00001D7983 /* Info.plist */,
 				D7D6E86124C05D00001D7983 /* Assets.xcassets */,
 			);
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D732A32624C101A30025587D /* UIView+Extensions.swift in Sources */,
 				D7D6E85D24C05CFE001D7983 /* CreditCardViewController.swift in Sources */,
 				D7D6E87A24C0A546001D7983 /* CreditCardViewModel.swift in Sources */,
 				D7D6E87C24C0A853001D7983 /* UITextfield+Extension.swift in Sources */,
@@ -357,7 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = welnlesys.YogifyPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -374,7 +378,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = welnlesys.YogifyPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
