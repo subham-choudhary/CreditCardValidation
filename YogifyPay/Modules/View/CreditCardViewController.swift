@@ -16,6 +16,7 @@ class CreditCardViewController: UIViewController {
     
     var editFlag = false
     var viewModel = CreditCardViewModel()
+    var selectedTextRangeWhileDelete: UITextRange?
     var cardType: CardType = .Unknown
     
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ class CreditCardViewController: UIViewController {
     @objc func textFieldDidChange(_ textField: UITextField) {
         resetSpaces(textField)
         modifyPlaceHolder(textField)
-        print(textField.validateCreditCardFormat())
+//        print(textField.validateCreditCardFormat())
         
     }
     
@@ -50,13 +51,14 @@ class CreditCardViewController: UIViewController {
             }
         }
         textField.text = newText
+        textField.selectedTextRange = selectedTextRangeWhileDelete
     }
     
     func modifyPlaceHolder(_ textField: UITextField) {
         guard let text = textField.text else {return}
         let range = NSRange(location: 0, length: text.count)
-        let attribute = NSMutableAttributedString.init(string: labelPlaceholder.text ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red , range: range)
+        let attribute = NSMutableAttributedString.init(string: labelPlaceholder.text ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white , range: range)
         labelPlaceholder.attributedText = attribute
     }
 }
@@ -64,7 +66,10 @@ class CreditCardViewController: UIViewController {
 extension CreditCardViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        
+        print(range, string)
+        if range.length == 1 {
+            selectedTextRangeWhileDelete = textField.selectedTextRange ?? nil
+        }
         editFlag = true
         return (textField.text?.count ?? 0) + (string.count - range.length) <= 19
     }
