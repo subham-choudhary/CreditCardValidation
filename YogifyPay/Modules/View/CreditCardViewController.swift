@@ -126,7 +126,7 @@ class CreditCardViewController: UIViewController {
         case .fifteenDigit, .forteenDigit:
             for (index,element) in trimmedText.enumerated() {
                 let char = (String(element))
-                if index == 4 || index == 11 {
+                if index == 4 || index == 10 {
                     newText.append(" \(char)")
                 } else {
                     newText.append(char)
