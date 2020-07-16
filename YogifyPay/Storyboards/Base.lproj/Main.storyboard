@@ -29,8 +29,8 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUl-2K-7jP">
-                                        <rect key="frame" x="8" y="125.00000000000001" width="319" height="18.666666666666671"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUl-2K-7jP">
+                                        <rect key="frame" x="8" y="-3798.0000000000009" width="319" height="18.666666666666686"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" textContentType="cc-number"/>
                                     </textField>
@@ -40,7 +40,6 @@
                                     <constraint firstItem="SYd-tR-Nc5" firstAttribute="top" secondItem="XyS-UW-qu4" secondAttribute="top" constant="100" id="RS8-v2-1Uf"/>
                                     <constraint firstItem="hUl-2K-7jP" firstAttribute="trailing" secondItem="SYd-tR-Nc5" secondAttribute="trailing" id="Rdf-9p-42v"/>
                                     <constraint firstAttribute="height" constant="220" id="gOS-2c-bF5"/>
-                                    <constraint firstItem="hUl-2K-7jP" firstAttribute="top" secondItem="SYd-tR-Nc5" secondAttribute="bottom" constant="8" id="iXG-le-EXc"/>
                                     <constraint firstItem="hUl-2K-7jP" firstAttribute="leading" secondItem="SYd-tR-Nc5" secondAttribute="leading" id="jzq-w1-GM2"/>
                                     <constraint firstItem="SYd-tR-Nc5" firstAttribute="leading" secondItem="XyS-UW-qu4" secondAttribute="leading" constant="8" id="qpP-M9-4jj"/>
                                     <constraint firstAttribute="trailing" secondItem="SYd-tR-Nc5" secondAttribute="trailing" constant="8" id="vCh-LL-A0u"/>

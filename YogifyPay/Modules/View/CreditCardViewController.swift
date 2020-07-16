@@ -16,6 +16,7 @@ class CreditCardViewController: UIViewController {
     
     var editFlag = false
     var viewModel = CreditCardViewModel()
+    var cardType: CardType = .Unknown
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +30,16 @@ class CreditCardViewController: UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         resetSpaces(textField)
+        modifyPlaceHolder(textField)
+        print(textField.validateCreditCardFormat())
+        
     }
     
     func resetSpaces(_ textField: UITextField) {
         
         guard let text = textField.text, editFlag else { return }
         editFlag = false
-        var trimmedText = text.filter{ !" ".contains($0)}
+        let trimmedText = text.filter{ !" ".contains($0)}
         var newText = ""
         for (index,element) in trimmedText.enumerated() {
             let char = (String(element))
@@ -48,12 +52,19 @@ class CreditCardViewController: UIViewController {
         textField.text = newText
     }
     
+    func modifyPlaceHolder(_ textField: UITextField) {
+        guard let text = textField.text else {return}
+        let range = NSRange(location: 0, length: text.count)
+        let attribute = NSMutableAttributedString.init(string: labelPlaceholder.text ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red , range: range)
+        labelPlaceholder.attributedText = attribute
+    }
 }
 
 extension CreditCardViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        print(textField.validateCreditCardFormat())
+        
         editFlag = true
         return (textField.text?.count ?? 0) + (string.count - range.length) <= 19
     }

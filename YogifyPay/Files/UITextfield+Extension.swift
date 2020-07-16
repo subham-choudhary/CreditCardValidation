@@ -10,24 +10,26 @@ import Foundation
 import UIKit
 
 enum CardType: String {
-    case Unknown, Amex, Visa, MasterCard, Diners, Discover, JCB, Elo
+    case Unknown, Amex, Visa, MasterCard, Diners, Discover, JCB, Elo, Maestro
 
-    static let allCards = [Amex, Visa, MasterCard, Diners, Discover, JCB, Elo]
+    static let allCards = [Amex, Visa, MasterCard, Diners, Discover, JCB, Elo, Maestro]
 
     var regex : String {
         switch self {
         case .Amex:
-           return "^3[47][0-9]{5,}$"
+           return "^3[47][0-9]{0,}$"
         case .Visa:
-           return "^4[0-9]{6,}([0-9]{3})?$"
+           return "^4[0-9]{0,}$"
         case .MasterCard:
-           return "^(5[1-5][0-9]{4}|677189)[0-9]{5,}$"
+           return "^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[01]|2720)[0-9]{0,}$"
         case .Diners:
-           return "^3(?:0[0-5]|[68][0-9])[0-9]{4,}$"
+           return "^3(?:0[0-59]{1}|[689])[0-9]{0,}$"
         case .Discover:
-           return "^6(?:011|5[0-9]{2})[0-9]{3,}$"
+           return "^(6011|65|64[4-9]|62212[6-9]|6221[3-9]|622[2-8]|6229[01]|62292[0-5])[0-9]{0,}$"
         case .JCB:
-           return "^(?:2131|1800|35[0-9]{3})[0-9]{3,}$"
+           return "^(?:2131|1800|35)[0-9]{0,}$"
+        case .Maestro:
+            return "^3(?:0[0-59]{1}|[689])[0-9]{0,}$"
         case .Elo:
            return "^((((636368)|(438935)|(504175)|(451416)|(636297))[0-9]{0,10})|((5067)|(4576)|(4011))[0-9]{0,12})$"
         default:
