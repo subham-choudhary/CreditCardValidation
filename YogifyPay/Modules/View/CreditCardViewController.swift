@@ -53,7 +53,7 @@ class CreditCardViewController: UIViewController {
 extension CreditCardViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        print(textField.text, range, string)
+        print(textField.validateCreditCardFormat())
         editFlag = true
         return (textField.text?.count ?? 0) + (string.count - range.length) <= 19
     }

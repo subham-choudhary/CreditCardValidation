@@ -39,8 +39,9 @@ extension UITextField{
 
 func validateCreditCardFormat() -> (type: CardType, valid: Bool) {
         // Get only numbers from the input string
-    guard let input = self.text, let _ = Double(input) else { return (type:.Unknown, valid:false)}
-        
+    
+    guard let input0 = self.text else { return (type:.Unknown, valid:false)}
+    let input = input0.filter{ !" ".contains($0)}
     var type: CardType = .Unknown
     var formatted = ""
     var valid = false
