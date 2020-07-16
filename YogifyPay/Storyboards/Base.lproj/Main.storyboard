@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Credit Card View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CreditCardViewController" customModule="YogifyPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyS-UW-qu4">
+                                <rect key="frame" x="20" y="108" width="335" height="220"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYd-tR-Nc5">
+                                        <rect key="frame" x="8" y="100" width="319" height="17"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="XXXX XXXX XXXX XXXX">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="Courier"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUl-2K-7jP">
+                                        <rect key="frame" x="8" y="125.00000000000001" width="319" height="18.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" textContentType="cc-number"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="SYd-tR-Nc5" firstAttribute="top" secondItem="XyS-UW-qu4" secondAttribute="top" constant="100" id="RS8-v2-1Uf"/>
+                                    <constraint firstItem="hUl-2K-7jP" firstAttribute="trailing" secondItem="SYd-tR-Nc5" secondAttribute="trailing" id="Rdf-9p-42v"/>
+                                    <constraint firstAttribute="height" constant="220" id="gOS-2c-bF5"/>
+                                    <constraint firstItem="hUl-2K-7jP" firstAttribute="top" secondItem="SYd-tR-Nc5" secondAttribute="bottom" constant="8" id="iXG-le-EXc"/>
+                                    <constraint firstItem="hUl-2K-7jP" firstAttribute="leading" secondItem="SYd-tR-Nc5" secondAttribute="leading" id="jzq-w1-GM2"/>
+                                    <constraint firstItem="SYd-tR-Nc5" firstAttribute="leading" secondItem="XyS-UW-qu4" secondAttribute="leading" constant="8" id="qpP-M9-4jj"/>
+                                    <constraint firstAttribute="trailing" secondItem="SYd-tR-Nc5" secondAttribute="trailing" constant="8" id="vCh-LL-A0u"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XyS-UW-qu4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6v2-JH-hdK"/>
+                            <constraint firstItem="XyS-UW-qu4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="Dej-c7-Bdl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XyS-UW-qu4" secondAttribute="trailing" constant="20" id="ryf-M7-hpo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelPlaceholder" destination="SYd-tR-Nc5" id="1fW-Cd-sYR"/>
+                        <outlet property="textFieldCardNumber" destination="hUl-2K-7jP" id="OYH-qK-rZo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314.39999999999998" y="71.674876847290648"/>
+        </scene>
+    </scenes>
+</document>
