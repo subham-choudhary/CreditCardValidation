@@ -88,9 +88,9 @@
 		D7D6E87424C0A4A1001D7983 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D7D6E87224C0A45B001D7983 /* View */,
 				D7D6E87824C0A4FD001D7983 /* Model */,
 				D7D6E87724C0A4F0001D7983 /* ViewModel */,
-				D7D6E87224C0A45B001D7983 /* View */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -107,9 +107,9 @@
 		D7D6E87624C0A4C5001D7983 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				D7D6E87B24C0A853001D7983 /* UITextfield+Extension.swift */,
 				D7D6E86624C05D00001D7983 /* Info.plist */,
 				D7D6E86124C05D00001D7983 /* Assets.xcassets */,
-				D7D6E87B24C0A853001D7983 /* UITextfield+Extension.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";

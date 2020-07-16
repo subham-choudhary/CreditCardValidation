@@ -15,34 +15,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyS-UW-qu4">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyS-UW-qu4">
                                 <rect key="frame" x="20" y="108" width="335" height="220"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX XXXX XXXX XXXX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYd-tR-Nc5">
-                                        <rect key="frame" x="8" y="100" width="319" height="18.666666666666671"/>
-                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                        <rect key="frame" x="20" y="110" width="307" height="25.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="24"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUl-2K-7jP">
-                                        <rect key="frame" x="8" y="101" width="319" height="18.666666666666671"/>
-                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUl-2K-7jP">
+                                        <rect key="frame" x="20" y="111" width="307" height="25.666666666666657"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" textContentType="cc-number"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="0.92808219178082196" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="hUl-2K-7jP" firstAttribute="height" secondItem="SYd-tR-Nc5" secondAttribute="height" id="EIx-fK-yHD"/>
                                     <constraint firstItem="hUl-2K-7jP" firstAttribute="top" secondItem="SYd-tR-Nc5" secondAttribute="top" constant="1.0000000000001137" id="Fqh-Qk-bzb"/>
-                                    <constraint firstItem="SYd-tR-Nc5" firstAttribute="top" secondItem="XyS-UW-qu4" secondAttribute="top" constant="100" id="RS8-v2-1Uf"/>
+                                    <constraint firstItem="SYd-tR-Nc5" firstAttribute="top" secondItem="XyS-UW-qu4" secondAttribute="top" constant="110" id="RS8-v2-1Uf"/>
                                     <constraint firstItem="hUl-2K-7jP" firstAttribute="trailing" secondItem="SYd-tR-Nc5" secondAttribute="trailing" id="Rdf-9p-42v"/>
                                     <constraint firstItem="hUl-2K-7jP" firstAttribute="width" secondItem="SYd-tR-Nc5" secondAttribute="width" id="abx-YZ-R95"/>
                                     <constraint firstAttribute="height" constant="220" id="gOS-2c-bF5"/>
                                     <constraint firstItem="hUl-2K-7jP" firstAttribute="leading" secondItem="SYd-tR-Nc5" secondAttribute="leading" id="jzq-w1-GM2"/>
-                                    <constraint firstItem="SYd-tR-Nc5" firstAttribute="leading" secondItem="XyS-UW-qu4" secondAttribute="leading" constant="8" id="qpP-M9-4jj"/>
+                                    <constraint firstItem="SYd-tR-Nc5" firstAttribute="leading" secondItem="XyS-UW-qu4" secondAttribute="leading" constant="20" id="qpP-M9-4jj"/>
                                     <constraint firstAttribute="trailing" secondItem="SYd-tR-Nc5" secondAttribute="trailing" constant="8" id="vCh-LL-A0u"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xu-Bg-Wew">
+                                <rect key="frame" x="22" y="65" width="223" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Enter your Credit Card Number</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.12941176470588234" green="0.12984612579999999" blue="0.12984395030000001" alpha="0.92808219178082196" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Courier"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>

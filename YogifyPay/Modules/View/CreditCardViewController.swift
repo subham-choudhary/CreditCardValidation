@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum ContainerType: String {
+    case sixteenDigit = "XXXX XXXX XXXX XXXX"
+    case fifteenDigit = "XXXX XXXXXX XXXXX"
+    case forteenDigit = "XXXX XXXXXX XXXX"
+}
 
 class CreditCardViewController: UIViewController {
     
@@ -17,6 +22,7 @@ class CreditCardViewController: UIViewController {
     var editFlag = false
     var viewModel = CreditCardViewModel()
     var cardType: CardType = .Unknown
+    var containerType: ContainerType = .sixteenDigit
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +35,20 @@ class CreditCardViewController: UIViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        
+        let (cardType, valid) = textField.validateCreditCardFormat()
+        setupCardType(cardType: cardType, valid: valid) //Should be called first
         resetSpaces(textField)
         modifyPlaceHolder(textField)
-//        print(textField.validateCreditCardFormat())
         
+        
+    }
+    func setupCardType(cardType: CardType, valid: Bool) {
+        switch cardType {
+        case .Unknown, .MasterCard, .JCB, .Discover, .Elo, .Maestro, .Visa: containerType = .sixteenDigit
+        case .Amex: containerType = .fifteenDigit
+        case .Diners: containerType = .forteenDigit
+        }
     }
     
     func resetSpaces(_ textField: UITextField) {
@@ -45,14 +61,28 @@ class CreditCardViewController: UIViewController {
         let trimmedText = text.filter{ !" ".contains($0)}
         var newText = ""
         
-        for (index,element) in trimmedText.enumerated() {
-            let char = (String(element))
-            if (index) % 4 == 0 && index > 0 {
-                newText.append(" \(char)")
-            } else {
-                newText.append(char)
+        switch containerType {
+        
+        case .sixteenDigit:
+            for (index,element) in trimmedText.enumerated() {
+                let char = (String(element))
+                if (index) % 4 == 0 && index > 0 {
+                    newText.append(" \(char)")
+                } else {
+                    newText.append(char)
+                }
+            }
+        case .fifteenDigit, .forteenDigit:
+            for (index,element) in trimmedText.enumerated() {
+                let char = (String(element))
+                if index == 4 || index == 11 {
+                    newText.append(" \(char)")
+                } else {
+                    newText.append(char)
+                }
             }
         }
+        
         textField.text = newText
         if textCountBeforeTrimming != newText.count {
             if let range = cursorSelectedTextRange {
@@ -66,22 +96,21 @@ class CreditCardViewController: UIViewController {
     }
     
     func modifyPlaceHolder(_ textField: UITextField) {
-        guard let text = textField.text else {return}
+        guard let text = textField.text, text.count <= labelPlaceholder.text?.count ?? 0 else { return }
+        labelPlaceholder.text = containerType.rawValue
         
         let range = NSRange(location: 0, length: text.count)
         let attribute = NSMutableAttributedString.init(string: labelPlaceholder.text ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white , range: range)
+        let darkGrayColor = UIColor(displayP3Red: 33/255, green: 33/255, blue: 33/255, alpha: 0.93)
+        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: darkGrayColor , range: range)
         labelPlaceholder.attributedText = attribute
     }
 }
 
 extension CreditCardViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        print(range, string)
-
         editFlag = true
-        return (textField.text?.count ?? 0) + (string.count - range.length) <= 19
+        return (textField.text?.count ?? 0) + (string.count - range.length) <= containerType.rawValue.count
     }
 
 }
